@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seberapa Sayang Kamu?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Seberapa sayang kamu sama aku?</h1>
+        <form action="result.php" method="POST">
+            <div class="slider-container">
+                <input type="range" min="0" max="100" value="50" class="slider" id="loveSlider" name="lovePercentage" oninput="updatePercentage()">
+                <p id="displayPercentage">50%</p>
+            </div>
+            <button type="submit" class="submit-btn">Lihat Jawaban</button>
+        </form>
+    </div>
+
+    <script>
+        function updatePercentage() {
+            let slider = document.getElementById("loveSlider");
+            let display = document.getElementById("displayPercentage");
+            display.textContent = slider.value + "%";
+        }
+    </script>
+</body>
+</html>
